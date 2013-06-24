@@ -21,10 +21,8 @@ function getPhotoList(data,textStatus,jqXHR)
 
 function getGallery(data,textStatus,jqXHR)
 {
-	console.log("getGallery:"+Date.now());
 	var url = "http://api.flickr.com/services/rest/?method=flickr.photosets.getPhotos&api_key="+apiKey+"&photoset_id="+photosetID+"&format=json&jsoncallback=?";
 	$.getJSON(url,getPhotoList);
-	console.log("getGallery complete:"+Date.now());
 }
 
 
@@ -36,12 +34,21 @@ function getGallery(data,textStatus,jqXHR)
 // fenlandset=72157621963307915
 function changeSet(event)
 {
+    // if its the currently selected set then exit
+    if($(this).hasClass('.setselectoractive'))
+    {
+        alert("Already active on menu");
+        return;
+    }
+    $('.setselectoractive').addClass('setselector');
+    $('.setselectoractive').removeClass('.setselectoractive');
+    $(this).removeClass('setselector');
+    $(this).addClass('setselectoractive');
+    // Remove the current setselectoractive class
     photosetID=$(this).attr("data-href");
     $.getJSON(url,getGallery);    
 }
 
 $('.setselector').click(changeSet);
+$('.setselectoractive').click(changeSet);
 $.getJSON(url,getGallery);
-
- 
-	
