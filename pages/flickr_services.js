@@ -1,5 +1,4 @@
-var photosetID='72157622478698869';
-//API key for use in the calls
+var photosetID='72157623934603432';
 var apiKey = '83579700317fd9a3baaadcf305b61c5b';
 var url = "http://api.flickr.com/services/rest/?method=flickr.galleries.getList&api_key="+apiKey+"&user_id=30527111%40N05&format=json&jsoncallback=?";
 var $imagesLoaded = false;
@@ -10,7 +9,7 @@ function getPhotoList(data,textStatus,jqXHR)
 	var ptar = data.photoset.photo;
 	for (var img in ptar) {
 
-		imglist+= "<li><img src=\"http://farm"+ptar[img].farm+".staticflickr.com/"+ptar[img].server+"/"+ptar[img].id+"_"+ptar[img].secret+"_z.jpg\" width=800px height=800px></li>";
+		imglist+= "<li><img src=\"http://farm"+ptar[img].farm+".staticflickr.com/"+ptar[img].server+"/"+ptar[img].id+"_"+ptar[img].secret+"_z.jpg\" width=99% height=99%></li>";
 	}
 	imglist+=$('#slider').html(imglist);
 	$('#imageList').html("imglist");
@@ -27,11 +26,6 @@ function getGallery(data,textStatus,jqXHR)
 
 
 
-//the initial json request to flickr to get the gallery ID
-//seeemilyplayuk userid = 30527111@N05
-// landscapeset=72157622478698869
-// structureset=72157620295497121
-// fenlandset=72157621963307915
 function changeSet(event)
 {
     // if its the currently selected set then exit
