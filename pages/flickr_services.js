@@ -9,7 +9,7 @@ function getPhotoList(data,textStatus,jqXHR)
 	var ptar = data.photoset.photo;
 	for (var img in ptar) {
 
-		imglist+= "<li><img src=\"http://farm"+ptar[img].farm+".staticflickr.com/"+ptar[img].server+"/"+ptar[img].id+"_"+ptar[img].secret+"_z.jpg\" width=99% height=99%></li>";
+		imglist+= "<li><img src=\"http://farm"+ptar[img].farm+".staticflickr.com/"+ptar[img].server+"/"+ptar[img].id+"_"+ptar[img].secret+"_z.jpg\" width=800px height=900px></li>";
 	}
 	imglist+=$('#slider').html(imglist);
 	$('#imageList').html("imglist");
@@ -31,11 +31,11 @@ function changeSet(event)
     // if its the currently selected set then exit
     if($(this).hasClass('.setselectoractive'))
     {
-        alert("Already active on menu");
         return;
     }
-    $('.setselectoractive').addClass('setselector');
-    $('.setselectoractive').removeClass('.setselectoractive');
+    x = $('.setselectoractive');
+    x.removeClass();
+    x.addClass('setselector');
     $(this).removeClass('setselector');
     $(this).addClass('setselectoractive');
     // Remove the current setselectoractive class

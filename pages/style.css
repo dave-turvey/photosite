@@ -39,6 +39,9 @@ body {
 	height:10em; 
 	margin-top:-5em; 
 	list-style:none;
+        margin-left: 0px;
+        padding-left: 0px;
+        color: #808080;
 }
 
 #left .setselectoractive{	
@@ -49,17 +52,15 @@ body {
 
 #left .setselector{	
 	line-height:150%;
-	border-left:solid 4px #FFFFFF;
+	border-left:solid 4px white;
 	padding-left:4px;
 }
 
 #left .setselector:hover{	
-	border-left:solid 4px red;
+	color:black;
+        cursor: default;
 }
 
-#left .setselectoractive:hover{	
-	border-left:solid 4px red;
-}
 #left .contact{
 	font-size:75%;
 	margin-bottom:15px;
