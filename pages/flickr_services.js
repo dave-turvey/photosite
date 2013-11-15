@@ -1,6 +1,6 @@
-var photosetID='72157623934603432';
-var apiKey = '83579700317fd9a3baaadcf305b61c5b';
-var url = "http://api.flickr.com/services/rest/?method=flickr.galleries.getList&api_key="+apiKey+"&user_id=30527111%40N05&format=json&jsoncallback=?";
+var photosetID='XXXX';
+var apiKey = 'XXXXXX';
+var url = "http://api.flickr.com/services/rest/?method=flickr.galleries.getList&api_key="+apiKey+"&user_id=XXXXXXXXX&format=json&jsoncallback=?";
 var $imagesLoaded = false;
 
 function getPhotoList(data,textStatus,jqXHR)
